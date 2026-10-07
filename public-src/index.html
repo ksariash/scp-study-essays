@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>SCP Essay Lab</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-head">
+    <div>
+      <span class="eyebrow">SCP Study experiment</span>
+      <h1>Essay Lab</h1>
+      <p>Prototype structured recall before it reaches the Study app.</p>
+    </div>
+    <span class="lab-badge">Local-only prototype</span>
+  </header>
+
+  <main class="app-shell">
+    <section class="control-panel" aria-labelledby="experimentHeading">
+      <div>
+        <span class="eyebrow">Experiment controls</span>
+        <h2 id="experimentHeading">Compare the learning experience</h2>
+      </div>
+      <label class="field">
+        <span>Essay shape</span>
+        <select id="essaySelect"></select>
+      </label>
+      <fieldset class="support-fieldset">
+        <legend>Support level</legend>
+        <div class="segmented" id="supportPicker" role="radiogroup" aria-label="Support level">
+          <button type="button" data-support="guided" role="radio">Guided</button>
+          <button type="button" data-support="cued" role="radio">Cued</button>
+          <button type="button" data-support="recall" role="radio">Recall</button>
+        </div>
+      </fieldset>
+      <p class="support-description" id="supportDescription"></p>
+    </section>
+
+    <section class="essay-card" aria-labelledby="essayTitle">
+      <div class="essay-heading">
+        <div>
+          <span class="eyebrow" id="essayKind"></span>
+          <h2 id="essayTitle"></h2>
+        </div>
+        <button class="secondary" id="resetBtn" type="button">Reset attempt</button>
+      </div>
+      <p class="essay-prompt" id="essayPrompt"></p>
+
+      <div class="learning-callout">
+        <strong>Goal</strong>
+        <span id="learningGoal"></span>
+      </div>
+
+      <div id="taskHost"></div>
+
+      <section class="session-summary" aria-labelledby="sessionSummaryHeading">
+        <div>
+          <span class="eyebrow">Session signal</span>
+          <h3 id="sessionSummaryHeading">What kind of recall did this require?</h3>
+        </div>
+        <div class="signal-grid">
+          <div><strong id="unaidedCount">0</strong><span>Unaided</span></div>
+          <div><strong id="cueCount">0</strong><span>Used cue</span></div>
+          <div><strong id="missedCount">0</strong><span>Missed</span></div>
+        </div>
+        <p id="sessionInterpretation">Complete a few points to compare the learning signal.</p>
+      </section>
+    </section>
+
+    <aside class="research-card">
+      <span class="eyebrow">What to notice</span>
+      <h2>Does this feel like essay preparation?</h2>
+      <ul>
+        <li>Could you produce the idea before seeing it, or only recognize it afterward?</li>
+        <li>Does the assembled outline resemble what you would mentally plan before writing?</li>
+        <li>Does a cue help retrieval without simply giving away the answer?</li>
+        <li>Would repeating this with less support move you toward explaining the essay aloud?</li>
+      </ul>
+      <p class="source-note">Prototype course examples are adapted from the current SCP Study essay bank for interaction testing. This lab is not an authoritative replacement for the production course material.</p>
+    </aside>
+  </main>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>

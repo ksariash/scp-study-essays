@@ -1,0 +1,14 @@
+{
+  "name": "scp-study-essays",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Experimental SCP essay-learning interaction lab.",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "npm run build && npx wrangler dev",
+    "deploy": "npm run build && npx wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.102.0"
+  }
+}

@@ -12,79 +12,80 @@
     <div>
       <span class="eyebrow">SCP Study experiment</span>
       <h1>Essay Lab</h1>
-      <p>Prototype structured recall before it reaches the Study app.</p>
+      <p>Build the answer one sentence job at a time.</p>
     </div>
-    <span class="lab-badge">Local-only prototype</span>
+    <span class="lab-badge">Experimental</span>
   </header>
 
   <main class="app-shell">
-    <section class="control-panel" aria-labelledby="experimentHeading">
+    <section class="control-panel" aria-labelledby="essayPickerHeading">
       <div>
-        <span class="eyebrow">Experiment controls</span>
-        <h2 id="experimentHeading">Compare the learning experience</h2>
+        <span class="eyebrow">Essay</span>
+        <h2 id="essayPickerHeading">Choose a question to practice</h2>
       </div>
       <label class="field">
-        <span>Essay shape</span>
+        <span>Question</span>
         <select id="essaySelect"></select>
       </label>
-      <fieldset class="support-fieldset">
-        <legend>Support level</legend>
-        <div class="segmented" id="supportPicker" role="radiogroup" aria-label="Support level">
-          <button type="button" data-support="guided" role="radio">Guided</button>
-          <button type="button" data-support="cued" role="radio">Cued</button>
-          <button type="button" data-support="recall" role="radio">Recall</button>
-        </div>
-      </fieldset>
-      <p class="support-description" id="supportDescription"></p>
+      <button class="secondary" id="restartBtn" type="button">Restart essay</button>
     </section>
 
     <section class="essay-card" aria-labelledby="essayTitle">
       <div class="essay-heading">
         <div>
-          <span class="eyebrow" id="essayKind"></span>
+          <span class="eyebrow" id="essayCounter"></span>
           <h2 id="essayTitle"></h2>
         </div>
-        <button class="secondary" id="resetBtn" type="button">Reset attempt</button>
+        <div class="score-pill" id="scorePill" aria-live="polite">0/0 sentences built</div>
       </div>
+
       <p class="essay-prompt" id="essayPrompt"></p>
 
-      <div class="learning-callout">
-        <strong>Goal</strong>
-        <span id="learningGoal"></span>
-      </div>
-
-      <div id="taskHost"></div>
-
-      <details class="sample-answer">
-        <summary>Reference sample answer</summary>
-        <p class="sample-answer-note">Open this after attempting the reconstruction.</p>
-        <p id="sampleAnswer"></p>
-      </details>
-
-      <section class="session-summary" aria-labelledby="sessionSummaryHeading">
-        <div>
-          <span class="eyebrow">Session signal</span>
-          <h3 id="sessionSummaryHeading">What kind of recall did this require?</h3>
+      <section class="built-answer" aria-labelledby="builtAnswerHeading">
+        <div class="built-answer-head">
+          <div>
+            <span class="eyebrow">Your growing answer</span>
+            <h3 id="builtAnswerHeading">Essay outline</h3>
+          </div>
+          <span id="builtCount">0 sentences</span>
         </div>
-        <div class="signal-grid">
-          <div><strong id="unaidedCount">0</strong><span>Unaided</span></div>
-          <div><strong id="cueCount">0</strong><span>Used cue</span></div>
-          <div><strong id="missedCount">0</strong><span>Missed</span></div>
+        <div id="builtAnswerBody" class="built-answer-body">
+          <p class="built-placeholder">Complete the first sentence job to start building the answer.</p>
         </div>
-        <p id="sessionInterpretation">Complete a few points to compare the learning signal.</p>
+      </section>
+
+      <div class="progress-track" aria-hidden="true"><span id="progressFill"></span></div>
+
+      <section id="frameHost" class="frame-host" aria-live="polite"></section>
+
+      <section id="completionCard" class="completion-card hidden" aria-labelledby="completionHeading">
+        <span class="eyebrow">Essay complete</span>
+        <h3 id="completionHeading">Rehearse it once before checking the model.</h3>
+        <p id="completionSummary"></p>
+        <div class="completion-stats">
+          <div><strong id="firstTryCount">0</strong><span>First try</span></div>
+          <div><strong id="assistedCount">0</strong><span>Assisted</span></div>
+          <div><strong id="revealedCount">0</strong><span>Revealed</span></div>
+        </div>
+        <details class="sample-answer">
+          <summary>Compare with the model answer</summary>
+          <p id="sampleAnswer"></p>
+        </details>
       </section>
     </section>
 
     <aside class="research-card">
-      <span class="eyebrow">What to notice</span>
-      <h2>Does this feel like essay preparation?</h2>
-      <ul>
-        <li>Could you produce the idea before seeing it, or only recognize it afterward?</li>
-        <li>Does the assembled outline resemble what you would mentally plan before writing?</li>
-        <li>Does a cue help retrieval without simply giving away the answer?</li>
-        <li>Would repeating this with less support move you toward explaining the essay aloud?</li>
-      </ul>
-      <p class="source-note">These five questions and sample answers come from the provided Essay Study Guide. The task breakdowns are experimental learning structures, not changes to the source answers.</p>
+      <span class="eyebrow">Prototype idea</span>
+      <h2>Sentence jobs, not self-grading</h2>
+      <p>The app tells you what a strong sentence must <em>do</em>, but you must retrieve the authorities and key concepts yourself.</p>
+      <ol>
+        <li>Read the sentence job.</li>
+        <li>Fill the key terms from memory.</li>
+        <li>Check the sentence.</li>
+        <li>Correct mistakes or request a cue.</li>
+        <li>Watch the full essay assemble as you progress.</li>
+      </ol>
+      <p class="source-note">The five questions and source answers come from the supplied Essay Study Guide. Sentence wording is lightly reshaped for this experiment without changing the source content.</p>
     </aside>
   </main>
 

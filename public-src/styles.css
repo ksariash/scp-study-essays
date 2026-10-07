@@ -229,6 +229,35 @@ button { -webkit-tap-highlight-color: transparent; }
 .outline-section h4 { margin: 0; font-size: .82rem; }
 .outline-section p { margin: 6px 0 0; color: #52657f; font-size: .78rem; line-height: 1.5; }
 
+.sample-answer {
+  margin-top: 20px;
+  border: 1px solid #d9e3f0;
+  border-radius: 13px;
+  background: #fbfcfe;
+}
+.sample-answer summary {
+  padding: 12px 13px;
+  color: #31569a;
+  font-size: .78rem;
+  font-weight: 850;
+  cursor: pointer;
+}
+.sample-answer[open] summary {
+  border-bottom: 1px solid #e3e9f1;
+}
+.sample-answer-note {
+  margin: 12px 13px 0;
+  color: #7a8799;
+  font-size: .7rem;
+  line-height: 1.4;
+}
+#sampleAnswer {
+  margin: 8px 13px 13px;
+  color: #425773;
+  font-size: .78rem;
+  line-height: 1.58;
+}
+
 .session-summary {
   margin-top: 22px;
   padding-top: 18px;
